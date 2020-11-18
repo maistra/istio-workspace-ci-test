@@ -1,0 +1,13 @@
+name: PR workflow
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+jobs:
+  greet:
+    runs-on: [self-hosted, linux, X64]
+
+    steps:
+    - name: Send greeting
+      run: echo "Hello ${{ github.event.inputs.name }}"
